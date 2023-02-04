@@ -18,7 +18,6 @@ const Link: React.FunctionComponent<LinkProps> = ({
 
   useEffect(() => {
     if (mainLink) setIsActive(location.pathname === route && mainLink);
-    console.log(isActive);
   }, [location]);
 
   return (

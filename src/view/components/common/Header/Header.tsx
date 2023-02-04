@@ -1,9 +1,10 @@
+import { useGetInitialData } from '../../../../controller/hooks';
 import Nav from './Nav/Nav';
 import UserOptions from './UserOptions/UserOptions';
 
-interface IHeaderProps {}
+const Header: React.FunctionComponent = () => {
+  useGetInitialData();
 
-const Header: React.FunctionComponent<IHeaderProps> = (props) => {
   return (
     <header>
       <section className='bg-slate-50 flex justify-between items-center px-28 py-2'>

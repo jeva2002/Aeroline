@@ -1,15 +1,20 @@
 import { useState } from 'react';
-import CurrencyAndLanguage from './CurrencyAndLanguage';
+import { useSelector } from 'react-redux';
+import UserPreferences from './UserPreferences';
 import './UserOptions.scss';
+import { getPreferences } from '../../../../../controller/slices/userPreferences';
+import { capitalize } from '../../../../../model/services';
 
 type modalSelected = '' | 'currencyAndLanguage' | 'signUp' | 'login';
 
 const UserOptions: React.FunctionComponent = () => {
   const [modal, setModal] = useState<modalSelected>('');
+  const preferences = useSelector(getPreferences);
+
   const showModal = () => {
     switch (modal) {
       case 'currencyAndLanguage':
-        return <CurrencyAndLanguage />;
+        return <UserPreferences />;
       default:
         break;
     }
@@ -26,10 +31,10 @@ const UserOptions: React.FunctionComponent = () => {
             )
           }
         >
-          Español/ $COP
+          {capitalize(preferences.language)} / {preferences.currency}
         </button>
         <button
-          className='text-fuchsia-800'
+          className='text-fuchsia-800 border-1 rounded-full hover:border-slate-500'
           onClick={() => setModal(modal !== 'signUp' ? 'signUp' : '')}
         >
           Registrate
