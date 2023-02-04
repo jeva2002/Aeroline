@@ -1,0 +1,14 @@
+$primary-color: #a11692;
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: space-evenly;
+  padding: 50px;
+  position: absolute;
+  border-radius: 30px;
+  background-color: #fdfdfd;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  z-index: 20;
+}

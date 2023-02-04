@@ -1,0 +1,98 @@
+@import '../../../../../App.scss';
+
+.nav {
+  .toggle * {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+
+    a:hover {
+      color: $primary-color;
+    }
+  }
+
+  .main-links {
+    font-size: 18px;
+
+    .main-link {
+      color: $primary-color;
+      font-weight: bold;
+      border-bottom: $primary-color 4px solid;
+    }
+  }
+
+  .secondary-links {
+    font-size: 14px;
+
+    .select-container {
+      appearance: none;
+      background-color: transparent;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      cursor: pointer;
+      line-height: inherit;
+      z-index: 1;
+      &::-ms-expand {
+        display: none;
+      }
+      outline: none;
+    }
+
+    .select {
+      display: grid;
+      grid-template-areas: 'select';
+      align-items: center;
+      position: relative;
+
+      select,
+      &::after {
+        grid-area: select;
+      }
+
+      cursor: pointer;
+      line-height: 1.1;
+      background-color: transparent;
+      &:not(.select--multiple)::after {
+        content: '';
+        justify-self: end;
+        width: 0.8em;
+        height: 0.5em;
+        background-color: var(--select-arrow);
+        clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    .toggle * {
+      display: block;
+      cursor: pointer;
+    }
+
+    .secondary-links * {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    .main-links {
+      display: none;
+    }
+
+    #show {
+      display: flex;
+      flex-direction: column;
+      gap: 2;
+    }
+  }
+}
