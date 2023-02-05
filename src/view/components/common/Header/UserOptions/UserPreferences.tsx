@@ -59,7 +59,7 @@ const UserPreferences: React.FunctionComponent = (props) => {
         })}
       </select>
       <button
-        className='text-fuchsia-800 border-fuchsia-800 border-2 px-5 py-2 rounded-full hover:bg-fuchsia-100'
+        className='text-slate-50 border-fuchsia-800 border-2 px-5 py-2 rounded-full bg-fuchsia-800'
         type='submit'
       >
         Aplicar

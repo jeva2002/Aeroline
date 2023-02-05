@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import UserPreferences from './UserPreferences';
-import './UserOptions.scss';
 import { getPreferences } from '../../../../../controller/slices/userPreferences';
 import { capitalize } from '../../../../../model/services';
+import Register from './Register';
 
 type modalSelected = '' | 'currencyAndLanguage' | 'signUp' | 'login';
 
@@ -15,6 +15,8 @@ const UserOptions: React.FunctionComponent = () => {
     switch (modal) {
       case 'currencyAndLanguage':
         return <UserPreferences />;
+      case 'signUp':
+        return <Register />;
       default:
         break;
     }
