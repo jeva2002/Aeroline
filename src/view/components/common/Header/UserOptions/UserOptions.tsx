@@ -4,6 +4,7 @@ import UserPreferences from './UserPreferences';
 import { getPreferences } from '../../../../../controller/slices/userPreferences';
 import { capitalize } from '../../../../../model/services';
 import Register from './Register';
+import Login from './Login';
 
 type modalSelected = '' | 'currencyAndLanguage' | 'signUp' | 'login';
 
@@ -17,6 +18,8 @@ const UserOptions: React.FunctionComponent = () => {
         return <UserPreferences />;
       case 'signUp':
         return <Register />;
+      case 'login':
+        return <Login />;
       default:
         break;
     }
@@ -42,7 +45,7 @@ const UserOptions: React.FunctionComponent = () => {
           Registrate
         </button>
         <button
-          className='text-fuchsia-800 border-fuchsia-800 border-2 px-5 py-3 rounded-full hover:bg-fuchsia-100'
+          className='font-medium text-fuchsia-800 border-fuchsia-800 border-2 px-5 py-3 rounded-full hover:bg-fuchsia-50'
           onClick={() => setModal(modal !== 'login' ? 'login' : '')}
         >
           Inicia sesión

@@ -1,10 +1,8 @@
-import { Form, Field } from 'formik';
+import { Form } from 'formik';
 import CheckboxFormik from '../../../Form/CheckboxFormik';
 import TextFielFormik from '../../../Form/TextFieldFormik';
 
-interface IAppProps {}
-
-const RegisterForm: React.FunctionComponent<IAppProps> = (props) => {
+const RegisterForm: React.FunctionComponent = () => {
   return (
     <Form className='flex flex-col justify-evenly gap-4'>
       <TextFielFormik name='firstname' label='firstname' />

@@ -3,6 +3,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  UserCredential,
 } from 'firebase/auth';
 import { auth } from './config';
 
@@ -24,7 +25,7 @@ export const signInBasic = async (email: string, password: string) => {
   }
 };
 
-export const signInGoogle = async () => {
+export const signInGoogle = async (): Promise<any> => {
   try {
     return await signInWithPopup(auth, googleProvider);
   } catch (error) {

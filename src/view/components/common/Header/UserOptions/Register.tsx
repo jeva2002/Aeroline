@@ -1,11 +1,8 @@
 import { Formik } from 'formik';
-import { google } from '../../../../../assets/icons';
-import {
-  handleBasicRegister,
-  handleGoogleRegister,
-} from '../../../../../controller/handlers/handleRegister';
-import { REGISTER_SCHEMA } from '../../../../../model/services';
+import { handleBasicRegister } from '../../../../../controller/handlers/handleUserAccount';
+import { REGISTER_SCHEMA } from '../../../../../model/services/validateForm';
 import RegisterForm from './Forms/RegisterForm';
+import SignInGoogle from './Forms/SignInGoogle';
 
 export interface RegisterValues {
   firstname: string;
@@ -43,15 +40,7 @@ const Register: React.FunctionComponent = (props) => {
       >
         <RegisterForm />
       </Formik>
-      <p className='my-2'>También puedes acceder con Google</p>
-      <button
-        type='button'
-        className='flex justify-center items-center gap-5 bg-red-600 border-2 py-2 rounded-full text-slate-50 hover:bg-red-700'
-        onClick={handleGoogleRegister}
-      >
-        <img src={google} alt='Google icon' />
-        Registrar
-      </button>
+      <SignInGoogle />
     </div>
   );
 };

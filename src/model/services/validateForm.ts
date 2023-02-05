@@ -6,3 +6,8 @@ export const REGISTER_SCHEMA = yup.object().shape({
   email: yup.string().email().min(7).max(20).required(),
   password: yup.string().min(6).max(50).required(),
 });
+
+export const LOGIN_SCHEMA = yup.object().shape({
+  email: yup.string().email().min(7).max(20).required(),
+  password: yup.string().min(6).max(50).required(),
+});
