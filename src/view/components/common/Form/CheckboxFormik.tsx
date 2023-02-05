@@ -1,5 +1,5 @@
 import { useField } from 'formik';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Props {
   name: string;
@@ -9,6 +9,10 @@ interface Props {
 const CheckboxFormik: React.FunctionComponent<Props> = ({ name, label }) => {
   const [field, meta, helpers] = useField(name);
   const [checked, setChecked] = useState(false);
+
+  useEffect(() => {
+    helpers.setValue(checked);
+  }, [checked]);
 
   return (
     <div className='checkbox'>
@@ -20,7 +24,6 @@ const CheckboxFormik: React.FunctionComponent<Props> = ({ name, label }) => {
           checked={checked}
           onClick={() => {
             setChecked(!checked);
-            helpers.setValue(checked);
           }}
         />
       </label>
