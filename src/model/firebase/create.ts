@@ -6,6 +6,6 @@ export const createUserDoc = async (user: User) => {
   try {
     return await addDoc(usersCollection, user);
   } catch (error) {
-    return error;
+    throw error;
   }
 };

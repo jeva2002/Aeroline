@@ -24,10 +24,12 @@ $primary-color: #a11692;
   label {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 20px;
     font-size: 18px;
     input {
       font-size: 16px;
+      padding: 5px 0;
       padding-left: 10px;
       border: 1px solid $primary-color;
       border-radius: 20px;
@@ -36,7 +38,7 @@ $primary-color: #a11692;
 }
 
 .checkbox {
-  padding-right:20px;
+  padding-right: 20px;
   label {
     display: flex;
     justify-content: space-between;

@@ -8,7 +8,7 @@ const RegisterForm: React.FunctionComponent = () => {
       <TextFielFormik name='firstname' label='firstname' />
       <TextFielFormik name='lastname' label='lastname' />
       <TextFielFormik name='email' label='email' />
-      <TextFielFormik name='password' label='password' />
+      <TextFielFormik name='password' label='password' type='password' />
       <CheckboxFormik name='conditions' label='Términos y condiciones' />
       <button
         className='text-slate-50 border-fuchsia-800 border-2 px-5 py-1 rounded-full bg-fuchsia-800'
