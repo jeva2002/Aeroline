@@ -1,0 +1,40 @@
+.home {
+  background-image: url('../../assets/bg/home-hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+
+  #searchFly {
+    --tw-border-opacity: 1;
+    border-color: rgb(248 250 252 / var(--tw-border-opacity));
+  }
+
+  .text-field-home {
+    padding: 5px;
+    border: 2px solid;
+    --tw-border-opacity: 1;
+    border-color: rgb(226 232 240 / var(--tw-border-opacity));
+    width: 14rem;
+
+    label {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      --tw-text-opacity: 1;
+      color: rgb(100 116 139 / var(--tw-text-opacity));
+
+      input {
+        color: black;
+        font-weight: bold;
+        text-align: center;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .text-field-home {
+      width: 10rem;
+    }
+  }
+}

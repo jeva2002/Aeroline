@@ -1,21 +1,23 @@
-import { useField, Field } from 'formik';
+import { useField } from 'formik';
 import { capitalize } from '../../../../model/services';
 
 interface Props {
   name: string;
   label: string;
   type?: string;
+  className?: string;
 }
 
 const TextFielFormik: React.FunctionComponent<Props> = ({
   name,
   label,
   type,
+  className,
 }) => {
   const [field, meta] = useField(name);
 
   return (
-    <div className='text-input'>
+    <div className={className ? className : 'text-input'}>
       <label htmlFor={name}>
         {capitalize(label)}
         <input
